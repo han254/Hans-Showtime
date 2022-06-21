@@ -2,8 +2,9 @@
 ### By **Peter Njenga**
 ## Description
 An android movie app  where one can live streaming movies and series.
+
 ## Setup/Installation Requirements
-* Clone the repository (https://github.com/han254/Hans-Showtime.git].
+* Clone the repository [https://github.com/han254/Hans-Showtime.git].
 * Build
 * Enable gradle and import all dependencies
 * Run it on an emulator or device
