@@ -1,4 +1,4 @@
-package com.moringaschool.hanshowtime;
+package com.moringaschool.hanshowtime.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.moringaschool.hanshowtime.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,11 +30,11 @@ public class MainActivity extends AppCompatActivity {
         topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
         bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
 
-//        image = findViewById(R.id.imageView);
+        image = findViewById(R.id.imageView);
         logo =findViewById(R.id.textView);
         slogan =findViewById(R.id.textshowt);
 
-//        image.setAnimation(topAnim);
+        image.setAnimation(topAnim);
         logo.setAnimation(bottomAnim);
         slogan.setAnimation(bottomAnim);
 
