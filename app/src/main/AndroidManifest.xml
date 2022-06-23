@@ -16,16 +16,16 @@
         android:theme="@style/Theme.Hanshowtime"
         tools:targetApi="31">
         <activity
-            android:name=".UI.MovieListActivity"
+            android:name=".movieListActivity"
             android:exported="false" />
         <activity
-            android:name=".UI.SignUpActivity"
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".UI.LoginActivity"
+            android:name=".SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".UI.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
