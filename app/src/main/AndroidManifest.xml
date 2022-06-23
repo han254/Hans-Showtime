@@ -16,7 +16,7 @@
         android:theme="@style/Theme.Hanshowtime"
         tools:targetApi="31">
         <activity
-            android:name=".UI.MovieActivity"
+            android:name=".UI.MovieListActivity"
             android:exported="false" />
         <activity
             android:name=".UI.SignUpActivity"

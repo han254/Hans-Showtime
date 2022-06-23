@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.MovieActivity">
+    tools:context=".UI.MovieListActivity">
 
-    <TextView
-        android:id="@+id/textView2"
+    <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="216dp"
-        android:layout_marginTop="356dp"
-        android:text="SHOWTIME!!!"
-        android:textColor="@color/orange"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="234dp"
+        android:layout_marginEnd="136dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

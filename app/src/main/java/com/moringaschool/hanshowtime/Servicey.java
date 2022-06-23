@@ -1,4 +1,4 @@
-package com.moringaschool.hanshowtime.network;
+package com.moringaschool.hanshowtime;
 
 import com.moringaschool.hanshowtime.MovieApi;
 import com.moringaschool.hanshowtime.constants;
@@ -7,7 +7,7 @@ import com.moringaschool.hanshowtime.constants;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class clientService {
+public class Servicey {
 
     private static Retrofit.Builder retrofitBuilder =
             new Retrofit.Builder().baseUrl(constants.BASE_URL)
@@ -17,7 +17,7 @@ public class clientService {
 
     private static MovieApi movieAPi = retrofit.create(MovieApi.class);
 
-    public MovieApi getMovieAPi() {
+    public static MovieApi getMovieAPi() {
         return movieAPi;
     }
 }

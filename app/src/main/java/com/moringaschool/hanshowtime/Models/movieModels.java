@@ -42,28 +42,28 @@ public class movieModels implements Parcelable {
         }
     };
 
-    public void setTitle(String title) {
-        this.title = title;
+    public String getTitle() {
+        return title;
     }
 
-    public void setPoster_path(String poster_path) {
-        this.poster_path = poster_path;
+    public String getPoster_path() {
+        return poster_path;
     }
 
-    public void setReleased_date(String released_date) {
-        this.released_date = released_date;
+    public String getReleased_date() {
+        return released_date;
     }
 
-    public void setMovie_id(int movie_id) {
-        this.movie_id = movie_id;
+    public int getMovie_id() {
+        return movie_id;
     }
 
-    public void setVote_average(String vote_average) {
-        this.vote_average = vote_average;
+    public String getVote_average() {
+        return vote_average;
     }
 
-    public void setMovie_overView(String movie_overView) {
-        this.movie_overView = movie_overView;
+    public String getMovie_overView() {
+        return movie_overView;
     }
 
     @Override

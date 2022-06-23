@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.moringaschool.hanshowtime.R;
-import com.moringaschool.hanshowtime.SignUpActivity;
+
 
 public class LoginActivity extends AppCompatActivity {
     TextView txtSignUp;
