@@ -26,7 +26,7 @@ import retrofit2.Call;
 
 public class MoviesActivity extends AppCompatActivity {
 
-    private static final String TAG = MoviesActivity.class.getSimpleName(); // returns the simple name of the underlying class as given in the source code.
+    private static final String TAG = MoviesActivity.class.getSimpleName();
     @BindView(R.id.errorTextView) TextView mErrorTextView;
     @BindView(R.id.progressBar) ProgressBar mProgressBar;
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
@@ -35,7 +35,7 @@ public class MoviesActivity extends AppCompatActivity {
 
     private MoviesListAdapter mAdapter;
 
-    movieApi tmdbApi;
+    movieApi movieApi;
 
     public List<Result> results;
     private Result mMovies;
@@ -48,13 +48,13 @@ public class MoviesActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Intent intent = getIntent();
-        tmdbApi = MovieClient.getClient();
+        movieApi = MovieClient.getClient();
 
 
         mSearchMoviesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                retrofit2.Call<TMDBSearchMoviesResponse> call = tmdbApi.getMovies(BuildConfig.TMDB_API_KEY, mSearchView.getQuery().toString(), 1);
+                retrofit2.Call<TMDBSearchMoviesResponse> call = movieApi.getMovies(BuildConfig.TMDB_API_KEY, mSearchView.getQuery().toString(), 1);
                 call.enqueue(new retrofit2.Callback<TMDBSearchMoviesResponse>() {
                     @Override
                     public void onResponse(retrofit2.Call<TMDBSearchMoviesResponse> call, retrofit2.Response<TMDBSearchMoviesResponse> response) {
@@ -83,36 +83,36 @@ public class MoviesActivity extends AppCompatActivity {
                     }
                 });
 
-                call = tmdbApi.getTvShows(BuildConfig.TMDB_API_KEY, mSearchView.getQuery().toString(), 1);
-                call.enqueue(new retrofit2.Callback<TMDBSearchMoviesResponse>() {
-
-                    @Override
-                    public void onResponse(retrofit2.Call<TMDBSearchMoviesResponse> call, retrofit2.Response<TMDBSearchMoviesResponse> response) {
-
-                        hideProgressBar();
-
-                        results = response.body().getResults();
-                        mAdapter = new MoviesListAdapter(MoviesActivity.this, results);
-                        mRecyclerView.setAdapter(mAdapter);
-                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MoviesActivity.this);
-                        mRecyclerView.setLayoutManager(layoutManager);
-                        mRecyclerView.setHasFixedSize(true);
-
-                        showMovies();
-
-                    }
-
-                    @Override
-                    public void onFailure(Call<TMDBSearchMoviesResponse> call, Throwable t) {
-
-                        Log.i(TAG, "onFailure: show something ", t);
-                        t.printStackTrace();
-                        hideProgressBar();
-                        showFailureMessage();
-                        showUnsuccessfulMessage();
-
-                    }
-                });
+//                call = movieApi.getTvShows(BuildConfig.TMDB_API_KEY, mSearchView.getQuery().toString(), 1);
+//                call.enqueue(new retrofit2.Callback<TMDBSearchMoviesResponse>() {
+//
+//                    @Override
+//                    public void onResponse(retrofit2.Call<TMDBSearchMoviesResponse> call, retrofit2.Response<TMDBSearchMoviesResponse> response) {
+//
+//                        hideProgressBar();
+//
+//                        results = response.body().getResults();
+//                        mAdapter = new MoviesListAdapter(MoviesActivity.this, results);
+//                        mRecyclerView.setAdapter(mAdapter);
+//                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MoviesActivity.this);
+//                        mRecyclerView.setLayoutManager(layoutManager);
+//                        mRecyclerView.setHasFixedSize(true);
+//
+//                        showMovies();
+//
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<TMDBSearchMoviesResponse> call, Throwable t) {
+//
+//                        Log.i(TAG, "onFailure: show something ", t);
+//                        t.printStackTrace();
+//                        hideProgressBar();
+//                        showFailureMessage();
+//                        showUnsuccessfulMessage();
+//
+//                    }
+//                });
             }
 
             private void showFailureMessage() {
