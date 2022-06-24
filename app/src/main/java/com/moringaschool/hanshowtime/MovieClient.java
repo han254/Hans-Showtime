@@ -22,7 +22,7 @@ public class MovieClient {
     public static movieApi getClient() {
 
         if (retrofit == null) {
-            OkHttpClient okHttpClient = new OkHttpClient.Builder() //OkHttpClient intercepts each request and adds an HTTP Authorization header with token
+            OkHttpClient okHttpClient = new OkHttpClient.Builder()
                     .addInterceptor(new Interceptor() {
                         @Override
                         public Response intercept(Chain chain) throws IOException {
@@ -35,9 +35,9 @@ public class MovieClient {
                     .build();
 
             retrofit = new Retrofit.Builder()
-                    .baseUrl(BASE_URL) //appended to the endpoints we defined in the interface class
+                    .baseUrl(BASE_URL)
                     .client(okHttpClient)
-                    .addConverterFactory(GsonConverterFactory.create()) //converter handles data serialization from JSON to Java objects
+                    .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
 
