@@ -1,8 +1,5 @@
 package com.moringaschool.hanshowtime;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +9,10 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.moringaschool.hanshowtime.models.MoviesDetailsResponse;
 import com.moringaschool.hanshowtime.models.Result;
@@ -23,15 +24,22 @@ import adapters.MoviesListAdapter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MoviesActivity extends AppCompatActivity {
 
     private static final String TAG = MoviesActivity.class.getSimpleName();
-    @BindView(R.id.errorTextView) TextView mErrorTextView;
-    @BindView(R.id.progressBar) ProgressBar mProgressBar;
-    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
-    @BindView(R.id.searchMovies) SearchView mSearchView;
-    @BindView(R.id.searchMoviesButton) Button mSearchMoviesButton;
+    @BindView(R.id.errorTextView)
+    TextView mErrorTextView;
+    @BindView(R.id.progressBar)
+    ProgressBar mProgressBar;
+    @BindView(R.id.recyclerView)
+    RecyclerView mRecyclerView;
+    @BindView(R.id.searchMovies)
+    SearchView mSearchView;
+    @BindView(R.id.searchMoviesButton)
+    Button mSearchMoviesButton;
 
     private MoviesListAdapter mAdapter;
 
@@ -47,17 +55,17 @@ public class MoviesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_movies);
         ButterKnife.bind(this);
 
-        Intent intent = getIntent();
-        movieApi = MovieClient.getClient();
+//        Intent intent = getIntent();
 
 
         mSearchMoviesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                retrofit2.Call<TMDBSearchMoviesResponse> call = movieApi.getMovies(BuildConfig.TMDB_API_KEY, mSearchView.getQuery().toString(), 1);
-                call.enqueue(new retrofit2.Callback<TMDBSearchMoviesResponse>() {
+               movieApi movieApis = MovieClient.getClient();
+                Call<TMDBSearchMoviesResponse> call = movieApis.getMovies(BuildConfig.TMDB_API_KEY, mSearchView.getQuery().toString(), 1);
+                call.enqueue(new Callback<TMDBSearchMoviesResponse>() {
                     @Override
-                    public void onResponse(retrofit2.Call<TMDBSearchMoviesResponse> call, retrofit2.Response<TMDBSearchMoviesResponse> response) {
+                    public void onResponse(Call<TMDBSearchMoviesResponse> call, Response<TMDBSearchMoviesResponse> response) {
 
                         hideProgressBar();
 
