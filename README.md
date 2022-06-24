@@ -1,7 +1,7 @@
 # HanShowtime
 ### By **Peter Njenga**
 ## Description
-An android movie app  where one can live streaming movies and series.
+An android movie app where users can view movie updates and such for the movie details of their preferred movies.
 
 ## Setup/Installation Requirements
 * Clone the repository [https://github.com/han254/Hans-Showtime.git].
