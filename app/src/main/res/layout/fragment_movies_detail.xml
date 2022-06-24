@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/darkblue">
 
     <LinearLayout
         android:orientation="vertical"
@@ -34,7 +35,8 @@
                 android:layout_alignParentLeft="true"
                 android:text="Movie/Tvshow Name"
                 android:textSize="22sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/orange"/>
 
             <TextView
                 android:id="@+id/ratingMovies"
@@ -48,7 +50,8 @@
                 android:layout_marginRight="284dp"
                 android:text="4.5/5"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/genreTextView"
@@ -57,12 +60,14 @@
                 android:layout_below="@+id/movieNameTextView"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:text="Drama,comedy" />
+                android:text="Drama,comedy"
+                android:textColor="@color/white"/>
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -72,7 +77,8 @@
                 android:layout_alignParentTop="true"
                 android:orientation="vertical"
                 android:paddingLeft="16dp"
-                android:paddingRight="16dp">
+                android:paddingRight="16dp"
+                >
 
                 <TextView
                     android:id="@+id/overviewTextView"
@@ -80,7 +86,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="Overview"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:textColor="@color/orange"/>
 
                 <TextView
                     android:id="@+id/homepageTextView"
@@ -90,7 +97,7 @@
                     android:drawablePadding="4dp"
                     android:gravity="center"
                     android:text="Be updated on the latest movies"
-                    android:textColor="#6CB4EE"
+                    android:textColor="@color/white"
                     android:textSize="16sp" />
 
             </LinearLayout>
